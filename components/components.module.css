@@ -1,0 +1,16 @@
+.logoutButton,
+.profileButton {
+  --tw-ease: var(--ease-in) /* cubic-bezier(0.4, 0, 1, 1) */;
+  transition-timing-function: var(--ease-in);
+  --tw-duration: 100ms;
+  transition-duration: 100ms;
+  cursor: pointer;
+}
+
+.logoutButton:hover {
+  background-color: var(--color-red-800);
+}
+
+.profileButton:hover {
+  background-color: var(--color-gray-700);
+}

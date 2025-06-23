@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #141414;
     --foreground: #ededed;
   }
 }
@@ -23,4 +23,41 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.auth-button {
+  padding: calc(var(--spacing) * 3);
+  background-color: var(--color-gray-700);
+  color: var(--color-gray-100);
+  border-radius: var(--radius-lg);
+}
+
+.form-input {
+  font-size: var(--text-xl);
+  line-height: var(--tw-leading, var(--text-xl--line-height));
+  width: 350px;
+  padding: calc(var(--spacing) * 2.5);
+  padding-bottom: calc(var(--spacing) * 1);
+  border-bottom-width: 1px;
+}
+
+.form-input:focus {
+  outline: none;
+}
+.form-submit-button {
+  font-size: var(--text-xl) /* 1.25rem = 20px */;
+  line-height: var(--tw-leading, var(--text-xl--line-height));
+  padding-inline: calc(var(--spacing) * 8);
+  padding-block: calc(var(--spacing) * 1.5);
+  margin-top: calc(var(--spacing) * 3);
+  border-radius: var(--radius-2xl);
+  --tw-ease: var(--ease-in) /* cubic-bezier(0.4, 0, 1, 1) */;
+  transition-timing-function: var(--ease-in);
+  --tw-duration: 100ms;
+  transition-duration: 100ms;
+}
+
+.form-submit-button:hover {
+  background-color: var(--color-gray-700);
+  color: var(--color-emerald-50);
 }
