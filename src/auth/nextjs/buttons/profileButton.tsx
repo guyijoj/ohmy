@@ -1,13 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { ButtonClassic } from "../../../../components/Button";
+import { NavButton } from "../../../../components/Button";
+import { FaRegUser } from "react-icons/fa";
 
 const ProfileButton = () => {
   return (
-    <ButtonClassic>
-      <Link href="/profile">Profile</Link>
-    </ButtonClassic>
+    <NavButton>
+      <FaRegUser size={20} />
+      <Link href="/profile">Your profile</Link>
+    </NavButton>
   );
 };
 
