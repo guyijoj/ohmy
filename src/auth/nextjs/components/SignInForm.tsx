@@ -31,6 +31,7 @@ const SignInForm = () => {
         {...register("email")}
         type="text"
         placeholder="Email"
+        disabled={isSubmitting}
         className="form-input "
       />
       {errors.email && (
@@ -38,6 +39,7 @@ const SignInForm = () => {
       )}
       <input
         {...register("password")}
+        disabled={isSubmitting}
         type="password"
         placeholder="Password"
         className="form-input"

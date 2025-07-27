@@ -6,6 +6,14 @@ import { eq } from "drizzle-orm";
 import { UserTable } from "@/drizzle/schema";
 import { redirect } from "next/navigation";
 
+export interface fullUserProps {
+  fullUser: {
+    id: string;
+    role: "admin" | "user";
+    name: string;
+    email: string;
+  };
+}
 async function _getCurrentUser() {
   const user = await getUserFromSession(await cookies());
 

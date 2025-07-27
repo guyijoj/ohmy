@@ -1,0 +1,13 @@
+.navline {
+  position: relative;
+}
+.navline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  border-radius: 9px;
+  background: #8e8c8c;
+}
