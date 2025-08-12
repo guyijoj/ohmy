@@ -16,5 +16,6 @@
   background-color: var(--color-gray-700);
 }
 .navButton:hover {
-  background-color: var(--color-gray-500);
+  background-color: #ffffff;
+  color: var(--main-themecolor);
 }

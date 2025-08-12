@@ -1,7 +1,7 @@
 "use client";
 import { AnimatePresence, motion } from "motion/react";
 import BurgerButton from "../buttons/burgerButton";
-import NavigationBar from "./navigationBar";
+import NavigationBar from "./sideNavigationBar";
 import { useState } from "react";
 import { VscClose } from "react-icons/vsc";
 import { NavButton } from "../../../../components/Button";
@@ -10,7 +10,7 @@ import NavList from "./navList";
 import LogoutButton from "../components/LogoutButton";
 import styles from "../../../app/dashboard/dashboard.module.css";
 
-const Navigation = ({ children }: { children: React.ReactNode }) => {
+const NavBurger = ({ children }: { children: React.ReactNode }) => {
   const [isOpenNavBar, setOpenNavBar] = useState(false);
 
   return (
@@ -35,7 +35,6 @@ const Navigation = ({ children }: { children: React.ReactNode }) => {
                     <VscClose size={30} />
                   </NavButton>
                 </div>
-
                 <NavList />
               </div>
               <LogoutButton />
@@ -47,4 +46,4 @@ const Navigation = ({ children }: { children: React.ReactNode }) => {
   );
 };
 
-export default Navigation;
+export default NavBurger;

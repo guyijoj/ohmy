@@ -1,13 +1,24 @@
 import SignUpForm from "@/auth/nextjs/components/SignUpForm";
-import { CardContent, Card, CardTitle } from "../../../../components/Card";
+import {
+  CardContent,
+  Card,
+  CardTitle,
+  CardPic,
+  CardForm,
+} from "../../../../components/Card";
 
 const SignUp = () => {
   return (
-    <div className="flex h-screen justify-center items-center">
+    <div className="flex h-screen justify-center items-center bg-[var(--main-themecolor)]">
       <Card>
-        <CardTitle>Sign up</CardTitle>
+        <CardPic>
+          <img className="w-88.5 p-4 mr-30" src="auth4.svg" alt="a picture" />
+        </CardPic>
         <CardContent>
-          <SignUpForm />
+          <CardTitle>Sign up</CardTitle>
+          <CardForm>
+            <SignUpForm />
+          </CardForm>
         </CardContent>
       </Card>
     </div>

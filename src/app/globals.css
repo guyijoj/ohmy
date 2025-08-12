@@ -1,8 +1,13 @@
 @import "tailwindcss";
-
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+AU+QLD:wght@100..400&display=swap");
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --main-themecolor: #ff6767;
+  --sub-themecolor: #3abeff;
+  --foreground: #ffffff;
+  --main-textcolor: #212427;
+  --main-bordercolor: #a1a3ab;
 }
 
 @theme inline {
@@ -14,15 +19,24 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #141414;
+    --background: #ffffff;
     --foreground: #ededed;
   }
+}
+* {
+  box-sizing: border-box;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Inter", sans-serif;
+}
+
+.logo-font {
+  font-family: "Playwrite AU QLD", cursive;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 .auth-button {
@@ -33,31 +47,62 @@ body {
 }
 
 .form-input {
-  font-size: var(--text-xl);
+  font-size: var(--text-lg);
   line-height: var(--tw-leading, var(--text-xl--line-height));
   width: 350px;
-  padding: calc(var(--spacing) * 2.5);
-  padding-bottom: calc(var(--spacing) * 1);
-  border-bottom-width: 1px;
+  padding-left: calc(var(--spacing) * 10);
+  padding-right: calc(var(--spacing) * 3);
+  padding-top: calc(var(--spacing) * 2.5);
+  padding-bottom: calc(var(--spacing) * 2.5);
+  border-radius: var(--radius-md);
+  border-style: var(--tw-border-style);
+  border-color: var(--main-textcolor);
+  border-width: 1px;
+  color: var(--main-textcolor);
 }
-
 .form-input:focus {
   outline: none;
+  border-color: #008bd9;
+}
+
+.form-input-error {
+  border-color: var(--color-red-500);
 }
 .form-submit-button {
-  font-size: var(--text-xl) /* 1.25rem = 20px */;
+  font-size: var(--text-lg);
   line-height: var(--tw-leading, var(--text-xl--line-height));
-  padding-inline: calc(var(--spacing) * 8);
-  padding-block: calc(var(--spacing) * 1.5);
-  margin-top: calc(var(--spacing) * 3);
-  border-radius: var(--radius-2xl);
+  padding-inline: calc(var(--spacing) * 6);
+  padding-block: calc(var(--spacing) * 4);
+
+  border-radius: var(--radius-md);
   --tw-ease: var(--ease-in) /* cubic-bezier(0.4, 0, 1, 1) */;
   transition-timing-function: var(--ease-in);
   --tw-duration: 100ms;
+  width: calc(var(--spacing) * 30);
   transition-duration: 100ms;
 }
 
 .form-submit-button:hover {
   background-color: var(--color-gray-700);
   color: var(--color-emerald-50);
+}
+
+.input-icon {
+  transform: translate(-50%, -50%);
+}
+.input-container {
+  position: relative;
+}
+
+.heading-line::after {
+  content: "";
+  display: block;
+  background-color: #ff6767;
+  width: 161px;
+  height: 2px;
+}
+
+.active-nav {
+  background-color: #ffffff;
+  color: var(--main-themecolor);
 }

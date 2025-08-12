@@ -16,6 +16,7 @@ export interface fullUserProps {
 }
 async function _getCurrentUser() {
   const user = await getUserFromSession(await cookies());
+  // await new Promise((resolve) => setTimeout(resolve, 2000));
 
   if (user == null) {
     return redirect("/sign-in");

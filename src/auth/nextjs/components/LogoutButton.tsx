@@ -2,6 +2,7 @@
 
 import { ButtonRed } from "../../../../components/Button";
 import { logOut } from "../actions";
+import { IoMdExit } from "react-icons/io";
 
 const LogoutButton = () => {
   return (
@@ -10,6 +11,7 @@ const LogoutButton = () => {
         await logOut();
       }}
     >
+      <IoMdExit size={25} />
       Log out
     </ButtonRed>
   );

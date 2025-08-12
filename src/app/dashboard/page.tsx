@@ -1,22 +1,13 @@
 import { getCurrentUser } from "@/auth/nextjs/currentUser";
 import ToggleRole from "../profile/ToggleRole";
 import BurgerButton from "@/auth/nextjs/buttons/burgerButton";
-import NavigationBar from "@/auth/nextjs/navigation/navigationBar";
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";
 import ClientDashboard from "./client";
+import { SiValorant } from "react-icons/si";
 
 const Dashboard = async () => {
-  const fullUser = await getCurrentUser();
-  return (
-    <>
-      <h1 className="text-3xl">User: {fullUser?.id}</h1>
-      <h2 className="text-2xl">Role: {fullUser?.role}</h2>
-      <div className="flex mt-3">
-        <ToggleRole />
-      </div>
-    </>
-  );
+  return <p className="text-4xl text-blue-600">HELLO</p>;
 };
 
 export default Dashboard;

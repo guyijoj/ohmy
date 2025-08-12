@@ -1,17 +1,27 @@
 export const Card = ({ children }: any) => {
   return (
-    <div className="bg-gray-800  shadow-md shadow-gray-800  p-3 rounded-lg border-1 border-gray-300">
+    <div className="bg-[var(--background)] flex items-center  shadow-md shadow-gray-800  px-6 py-4 rounded-lg border-1 border-gray-300">
       {children}
     </div>
   );
 };
 export const CardTitle = ({ children }: any) => {
-  return <div className="text-2xl mb-3 text-center">{children}</div>;
+  return (
+    <div className="text-4xl mb-6 font-bold text-[var(--main-textcolor)]">
+      {children}
+    </div>
+  );
 };
 export const CardContent = ({ children }: any) => {
-  return <div className="text-center">{children}</div>;
+  return <div className=" ">{children}</div>;
 };
 
 export const CardItem = ({ children }: any) => {
   return <div className="text-start">{children}</div>;
+};
+export const CardForm = ({ children }: any) => {
+  return <div className="">{children}</div>;
+};
+export const CardPic = ({ children }: any) => {
+  return <div className="">{children}</div>;
 };

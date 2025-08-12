@@ -1,16 +1,21 @@
-import ProfileButton from "../buttons/profileButton";
-import LogoutButton from "../components/LogoutButton";
-import { SiValorant } from "react-icons/si";
-import styles from "../../../app/dashboard/dashboard.module.css";
-import NavUser from "./navUser";
-import NavList from "./navList";
-interface NavProps {
-  onClick: () => void;
-}
-const NavigationBar = ({ children }: { children: React.ReactNode }) => {
+const NavigationBar = () => {
+  const now = new Date();
+  const day = String(now.getDate()).padStart(2, "0");
+  const month = String(now.getMonth()).padStart(2, "0");
+  const year = now.getFullYear();
+  const weekday = now.toLocaleDateString("en-EN", { weekday: "long" });
   return (
-    <div className="bg-zinc-800 p-3 min-w-100 w-1/5 h-full rounded-l-3xl flex flex-col justify-between">
-      <div>{children}</div>
+    <div className="w-full flex items-center p-5 justify-between bg-[#F8F8F8] fixed  top-0 h-20 shadow-sm text-neutral-950">
+      <div className="text-5xl logo-font">
+        <span className="text-[var(--main-themecolor)] ">Wish</span>
+        <span className="text-[var(--sub-themecolor)]">List</span>
+      </div>
+      <div>
+        <h2 className="text-lg font-medium leading-none ">
+          {weekday.charAt(0).toUpperCase() + weekday.slice(1)}
+        </h2>
+        <h2 className="text-[#3ABEFF] text-md">{`${day}/${month}/${year}`}</h2>
+      </div>
     </div>
   );
 };

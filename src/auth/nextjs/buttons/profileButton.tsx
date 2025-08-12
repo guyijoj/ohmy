@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { NavButton } from "../../../../components/Button";
-import { FaRegUser } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
 
 const ProfileButton = () => {
   return (
     <NavButton>
-      <FaRegUser size={20} />
-      <Link href="/profile">Your profile</Link>
+      <FaUser size={20} />
+      <Link href="/dashboard/profile">Your profile</Link>
     </NavButton>
   );
 };

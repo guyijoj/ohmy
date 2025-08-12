@@ -1,3 +1,4 @@
+import { usePathname } from "next/navigation";
 import styles from "./components.module.css";
 
 interface ButtonProps {
@@ -9,7 +10,7 @@ export const ButtonRed = ({ children, onClick }: ButtonProps) => {
   return (
     <div
       onClick={onClick}
-      className={`bg-red-700 text-xl text-center rounded-lg p-3 logoutButton ${styles.logoutButton}`}
+      className={` text-lg font-bold rounded-lg flex gap-2 items-center p-3 logoutButton ${styles.logoutButton}`}
     >
       {children}
     </div>
@@ -31,7 +32,7 @@ export const NavButton = ({ children, onClick }: ButtonProps) => {
   return (
     <div
       onClick={onClick}
-      className={`font-semibold text-xl rounded-xl p-2 flex gap-2 items-center ${styles.navButton}`}
+      className={`font-semibold text-lg  p-3 flex gap-4 items-center ${styles.navButton} `}
     >
       {children}
     </div>
