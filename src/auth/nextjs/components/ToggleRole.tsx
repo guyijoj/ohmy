@@ -1,7 +1,7 @@
 "use client";
 
 import { toggleRole } from "@/actions/toggleRole";
-import { ButtonClassic } from "../../../components/Button";
+import { ButtonClassic } from "../../../../components/Button";
 
 export default function ToggleRole() {
   return (

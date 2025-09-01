@@ -28,6 +28,17 @@ export const ButtonClassic = ({ children, onClick }: ButtonProps) => {
   );
 };
 
+export const ButtonMainColor = ({ children, onClick }: ButtonProps) => {
+  return (
+    <div
+      onClick={onClick}
+      className={`bg-[var(--main-themecolor)]  text-center rounded-lg p-3  ${styles.buttonMainColor}`}
+    >
+      {children}
+    </div>
+  );
+};
+
 export const NavButton = ({ children, onClick }: ButtonProps) => {
   return (
     <div

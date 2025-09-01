@@ -1,5 +1,5 @@
 import { getCurrentUser } from "@/auth/nextjs/currentUser";
-import ToggleRole from "../profile/ToggleRole";
+import ToggleRole from "../../auth/nextjs/components/ToggleRole";
 import BurgerButton from "@/auth/nextjs/buttons/burgerButton";
 import { motion, AnimatePresence } from "motion/react";
 import { useEffect, useState } from "react";

@@ -3,7 +3,7 @@
 import BurgerButton from "@/auth/nextjs/buttons/burgerButton";
 import NavigationBar from "@/auth/nextjs/navigation/navigationBar";
 import { AnimatePresence, motion } from "motion/react";
-import ToggleRole from "../profile/ToggleRole";
+import ToggleRole from "../../auth/nextjs/components/ToggleRole";
 import { useState } from "react";
 import { fullUserProps } from "@/auth/nextjs/currentUser";
 

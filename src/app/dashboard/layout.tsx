@@ -1,7 +1,7 @@
 import { Suspense, useState } from "react";
 import BurgerButton from "@/auth/nextjs/buttons/burgerButton";
 import { AnimatePresence, motion } from "motion/react";
-import ToggleRole from "../profile/ToggleRole";
+import ToggleRole from "../../auth/nextjs/components/ToggleRole";
 import { fullUserProps } from "@/auth/nextjs/currentUser";
 import Navigation from "@/auth/nextjs/navigation/navBurger";
 import NavUser from "@/auth/nextjs/navigation/navUser";

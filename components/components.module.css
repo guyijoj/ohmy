@@ -1,5 +1,6 @@
 .logoutButton,
 .profileButton,
+.buttonMainColor,
 .navButton {
   --tw-ease: var(--ease-in) /* cubic-bezier(0.4, 0, 1, 1) */;
   transition-timing-function: var(--ease-in);
@@ -14,6 +15,9 @@
 
 .profileButton:hover {
   background-color: var(--color-gray-700);
+}
+.buttonMainColor:hover {
+  background-color: var(--color-red-500);
 }
 .navButton:hover {
   background-color: #ffffff;
