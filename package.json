@@ -8,13 +8,14 @@
     "start": "next start",
     "lint": "next lint",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "tsx src/drizzle/migrate.ts"
+    "db:migrate": "drizzle-kit push"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
+    "@neondatabase/serverless": "^1.0.1",
     "@upstash/redis": "^1.35.0",
-    "dotenv": "^16.5.0",
-    "drizzle-orm": "^0.44.2",
+    "dotenv": "^16.6.1",
+    "drizzle-orm": "^0.44.5",
     "motion": "^12.19.1",
     "next": "15.3.3",
     "next-auth": "^4.22.11",
@@ -31,8 +32,9 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "drizzle-kit": "^0.31.1",
+    "drizzle-kit": "^0.31.4",
     "tailwindcss": "^4",
+    "tsx": "^4.20.5",
     "typescript": "^5"
   }
 }
