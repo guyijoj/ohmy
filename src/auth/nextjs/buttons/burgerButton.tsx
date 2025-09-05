@@ -3,12 +3,14 @@ import { RxHamburgerMenu } from "react-icons/rx";
 
 import { ButtonClassic } from "../../../../components/Button";
 
-interface BurgerProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface BurgerProps {
+  onClick?: () => void;
+}
 
-const BurgerButton: React.FC<BurgerProps> = ({ ...rest }) => {
+const BurgerButton: React.FC<BurgerProps> = ({ onClick }) => {
   return (
-    <div {...rest}>
-      <ButtonClassic>
+    <div>
+      <ButtonClassic onClick={onClick}>
         <RxHamburgerMenu size={25} />
       </ButtonClassic>
     </div>

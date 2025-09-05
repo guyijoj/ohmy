@@ -22,7 +22,9 @@ const ClientDashboard = ({ fullUser }: fullUserProps) => {
               exit={{ x: "100%" }}
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
             >
-              <NavigationBar onClick={() => setOpenNavBar(false)} />
+              <div onClick={() => setOpenNavBar(false)}>
+                <NavigationBar />
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

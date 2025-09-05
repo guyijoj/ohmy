@@ -1,0 +1,6 @@
+[build]
+  command = "npm run build"
+  publish = ".next"   # .next - внутренняя папка Next.js
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
