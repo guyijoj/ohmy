@@ -8,7 +8,7 @@ const LogoutButton = () => {
   return (
     <ButtonRed
       onClick={async () => {
-        await logOut();
+        await goBack();
       }}
     >
       <IoMdExit size={25} />

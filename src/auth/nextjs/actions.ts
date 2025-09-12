@@ -40,7 +40,7 @@ export async function signIn(unsafeData: z.infer<typeof signInSchema>) {
   });
 
   //ЕСЛИ ПАРОЛЬ НЕПРАВИЛЬНАЯ
-  if (!isCorrectPassword) return "The password is incorrect";
+  if (isCorrectPassword) return "The password is incorrect";
 
   //СОЗДАНИЯ СЕССИИ
   await createUserSession(user, await cookies());
@@ -55,12 +55,12 @@ export async function signUp(unsafedata: z.infer<typeof signUpSchema>) {
   //ЕСЛИ ВАЛИДАЦИЯ НЕ ПРОШЛА
   if (!success) return "Unable to create a account";
 
-  //ПРОВЕРКА НА СУЩЕСТВУЮЩЕГО ПОЛЬЗОВАТЕЛЯ
+  // ПРОВЕРКА НА СУЩЕСТВУЮЩЕГО ПОЛЬЗОВАТЕЛЯ
   const existingUser = await db.query.UserTable.findFirst({
     where: eq(UserTable.email, data.email),
   });
 
-  //ЕСЛИ ПОЛЬЗОВАТЕЛЯ УЖЕ СУЩЕСТВУЕТ
+  // ЕСЛИ ПОЛЬЗОВАТЕЛЯ УЖЕ СУЩЕСТВУЕТ
   if (existingUser != null) return "Account already exists for this email";
 
   try {
@@ -86,8 +86,8 @@ export async function signUp(unsafedata: z.infer<typeof signUpSchema>) {
 
     // СОЗДАЕМ СЕССИЮ
     await createUserSession(user, await cookies());
-  } catch {
-    return "Unable to create account";
+  } catch (e) {
+    return `Unable to create account ${e}`;
   }
   //НАПРАВИТЬ НА НУЖНУЮ СТРАНИЦУ
   redirect("/dashboard");

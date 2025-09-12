@@ -1,7 +1,7 @@
 const NavigationBar = () => {
   const now = new Date();
-  const day = String(now.getDate()).padStart(2, "0");
-  const month = String(now.getMonth()).padStart(2, "0");
+  const day = String(now.getHours()).padStart(2, "0");
+  const month = String(now.getSeconds()).padStart(2, "0");
   const year = now.getFullYear();
   const weekday = now.toLocaleDateString("en-EN", { weekday: "long" });
   return (

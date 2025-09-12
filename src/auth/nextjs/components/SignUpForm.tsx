@@ -71,7 +71,7 @@ const SignUpForm = () => {
         />
         <input
           {...register("password")}
-          type="password"
+          type="text"
           placeholder="Enter Password"
           className={`form-input  ${errors.name && "form-input-error "}  `}
         />
@@ -87,7 +87,7 @@ const SignUpForm = () => {
         />
         <input
           {...register("confirmPassword")}
-          type="password"
+          type="text"
           placeholder="Confirm Password"
           className={`form-input  ${errors.name && "form-input-error "}  `}
         />
