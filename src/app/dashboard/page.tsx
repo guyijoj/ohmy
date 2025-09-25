@@ -7,7 +7,7 @@ import ClientDashboard from "./client";
 import { SiValorant } from "react-icons/si";
 
 const Dashboard = async () => {
-  return <p className="text-4xl text-blue-600">HELLO</p>;
+  return <img src="public/hmmm.jpg" className="w-3.5" />;
 };
 
 export default Dashboard;
