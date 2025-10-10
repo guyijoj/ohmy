@@ -23,3 +23,17 @@
   background-color: #ffffff;
   color: var(--main-themecolor);
 }
+
+.editProfileForm {
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+  border-color: var(--main-bordercolor);
+  border-radius: var(--radius-xl);
+  padding: calc(var(--spacing) * 2.5);
+  font-size: var(--text-lg);
+  line-height: var(--tw-leading, var(--text-lg--line-height));
+}
+.editProfileForm:focus {
+  outline: none;
+  border-color: #008bd9;
+}

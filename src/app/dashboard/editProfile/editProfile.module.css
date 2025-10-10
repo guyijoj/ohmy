@@ -1,0 +1,11 @@
+.btngoback:link,
+.btngoback:visited {
+  font-size: var(--text-lg);
+  line-height: var(--tw-leading, var(--text-lg--line-height));
+  transition: all 0.3s;
+}
+.btngoback:hover,
+.btngoback:active {
+  text-decoration-line: underline;
+  color: var(--main-themecolor);
+}

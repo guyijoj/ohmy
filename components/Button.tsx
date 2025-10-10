@@ -38,6 +38,20 @@ export const ButtonMainColor = ({ children, onClick }: ButtonProps) => {
     </div>
   );
 };
+export const ButtonEditProfileMainColor = ({
+  children,
+  onClick,
+}: ButtonProps) => {
+  return (
+    <button
+      type="submit"
+      onClick={onClick}
+      className={`bg-[var(--main-themecolor)] text-white font-bold  text-center rounded-lg p-3  ${styles.buttonMainColor}`}
+    >
+      {children}
+    </button>
+  );
+};
 
 export const NavButton = ({ children, onClick }: ButtonProps) => {
   return (

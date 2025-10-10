@@ -1,23 +1,18 @@
-import ProfileEditButton from "@/auth/nextjs/components/ProfileEditButton";
-import ToggleRole from "@/auth/nextjs/components/ToggleRole";
 import { getCurrentUser } from "@/auth/nextjs/currentUser";
-import React, { useState } from "react";
-import { SiValorant } from "react-icons/si";
-
 import Link from "next/link";
-import { ButtonMainColor, NavButton } from "../../../../components/Button";
+import React from "react";
+import { SiValorant } from "react-icons/si";
+import styles from "./editProfile.module.css";
+import ProfileForms from "../../../../components/forms/ProfileForms";
 
-const Profile = async () => {
+const EditProfile = async () => {
   const fullUser = await getCurrentUser();
 
   return (
     <div className="relative">
-      <ProfileEditButton />
-
       <h2 className="font-semibold text-2xl heading-line mb-6.5">
-        Account Information
+        Edit Profile
       </h2>
-
       <div className="flex gap-3 items-center mb-4">
         <SiValorant
           size={75}
@@ -31,11 +26,20 @@ const Profile = async () => {
           <h1 className="text-lg"> {fullUser?.email}</h1>
         </div>
       </div>
+      <Link
+        href="/dashboard/profile"
+        className={`absolute right-0 top-0 ${styles.btngoback}`}
+      >
+        &larr; Go Back
+      </Link>
 
-      <h1 className="text-2xl">User ID: {fullUser?.id}</h1>
-      <h1 className="text-2xl">Role: {fullUser?.role}</h1>
+      <div className="border-1 border-[var(--main-bordercolor)] rounded-xl p-7.5 mb-4">
+        <ProfileForms
+          UserData={{ UserRole: fullUser?.role, UserEmail: fullUser?.email }}
+        />
+      </div>
     </div>
   );
 };
 
-export default Profile;
+export default EditProfile;

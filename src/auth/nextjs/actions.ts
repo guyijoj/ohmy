@@ -1,7 +1,7 @@
 "use server";
 
 import { redirect } from "next/navigation";
-import { signInSchema, signUpSchema } from "./schemas";
+import { profileUpdateSchema, signInSchema, signUpSchema } from "./schemas";
 import z from "zod";
 import { db } from "@/drizzle/db";
 import { eq } from "drizzle-orm";
@@ -98,4 +98,22 @@ export async function logOut() {
   await removeUserSession(await cookies());
   //НАПРАВИТЬ НА НУЖНУЮ СТРАНИЦУ
   redirect("/");
+}
+
+export async function EditProfile(
+  UserEmail: string,
+  unsafeData: z.infer<typeof profileUpdateSchema>
+) {
+  const { success, data } = profileUpdateSchema.safeParse(unsafeData);
+
+  if (!success) return "Unable to edit profile";
+  try {
+    await db
+      .update(UserTable)
+      .set({ name: data.name })
+      .where(eq(UserTable.email, UserEmail));
+  } catch {
+    return "Unable to create account";
+  }
+  redirect("/dashboard/profile");
 }
