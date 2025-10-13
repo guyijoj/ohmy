@@ -9,8 +9,9 @@ import { useState } from "react";
 import Link from "next/link";
 import { FaUserAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
-import { FaLock } from "react-icons/fa6";
+
 import { MdLock } from "react-icons/md";
+import { FaRegUser } from "react-icons/fa";
 import { LuLockKeyhole } from "react-icons/lu";
 type FormField = z.infer<typeof signUpSchema>;
 
@@ -40,14 +41,29 @@ const SignUpForm = () => {
           className="text-[var(--main-textcolor)] input-icon absolute top-1/2 left-5"
         />
         <input
-          {...register("name")}
+          {...register("firstname")}
           type="text"
-          placeholder="Enter Username"
-          className={`form-input ${errors.name && "form-input-error "}  `}
+          placeholder="Enter First Name"
+          className={`form-input ${errors.firstname && "form-input-error "}  `}
         />
       </div>
-      {errors.name && (
-        <h3 className="text-red-500 text-xs">{errors.name.message}</h3>
+      {errors.firstname && (
+        <h3 className="text-red-500 text-xs">{errors.firstname.message}</h3>
+      )}
+      <div className="input-container">
+        <FaRegUser
+          size={20}
+          className="text-[var(--main-textcolor)] input-icon absolute top-1/2 left-5"
+        />
+        <input
+          {...register("lastname")}
+          type="text"
+          placeholder="Enter Last Name"
+          className={`form-input ${errors.lastname && "form-input-error "}  `}
+        />
+      </div>
+      {errors.lastname && (
+        <h3 className="text-red-500 text-xs">{errors.lastname.message}</h3>
       )}
       <div className="input-container">
         <MdEmail
@@ -58,7 +74,7 @@ const SignUpForm = () => {
           {...register("email")}
           type="text"
           placeholder="Enter Email"
-          className={`form-input  ${errors.name && "form-input-error "}  `}
+          className={`form-input  ${errors.email && "form-input-error "}  `}
         />
       </div>
       {errors.email && (
@@ -73,7 +89,7 @@ const SignUpForm = () => {
           {...register("password")}
           type="password"
           placeholder="Enter Password"
-          className={`form-input  ${errors.name && "form-input-error "}  `}
+          className={`form-input  ${errors.email && "form-input-error "}  `}
         />
       </div>
 
@@ -89,7 +105,9 @@ const SignUpForm = () => {
           {...register("confirmPassword")}
           type="password"
           placeholder="Confirm Password"
-          className={`form-input  ${errors.name && "form-input-error "}  `}
+          className={`form-input  ${
+            errors.confirmPassword && "form-input-error "
+          }  `}
         />
       </div>
       {errors.confirmPassword && (

@@ -26,7 +26,7 @@ const Profile = async () => {
         <div>
           <h1 className="text-xl font-semibold capitalize">
             {" "}
-            {fullUser?.name}
+            {fullUser.firstName + " " + fullUser.lastName}
           </h1>
           <h1 className="text-lg"> {fullUser?.email}</h1>
         </div>
@@ -34,6 +34,7 @@ const Profile = async () => {
 
       <h1 className="text-2xl">User ID: {fullUser?.id}</h1>
       <h1 className="text-2xl">Role: {fullUser?.role}</h1>
+      <h1 className="text-2xl">Contact number {fullUser?.contactNumber}</h1>
     </div>
   );
 };

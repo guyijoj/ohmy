@@ -10,13 +10,14 @@ export interface fullUserProps {
   fullUser: {
     id: string;
     role: "admin" | "user";
-    name: string;
+    firstName: string;
     email: string;
+    lastName: string;
+    contactNumber: string;
   };
 }
 async function _getCurrentUser() {
   const user = await getUserFromSession(await cookies());
-  // await new Promise((resolve) => setTimeout(resolve, 2000));
 
   if (user == null) {
     return redirect("/sign-in");
@@ -31,7 +32,14 @@ export const getCurrentUser = cache(_getCurrentUser);
 
 function getUserFromDb(id: string) {
   return db.query.UserTable.findFirst({
-    columns: { id: true, email: true, role: true, name: true },
+    columns: {
+      id: true,
+      email: true,
+      role: true,
+      firstName: true,
+      lastName: true,
+      contactNumber: true,
+    },
     where: eq(UserTable.id, id),
   });
 }

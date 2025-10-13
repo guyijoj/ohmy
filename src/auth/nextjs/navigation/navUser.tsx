@@ -18,7 +18,9 @@ const NavUser = async () => {
         size={75}
         className="bg-gray-700 p-1 rounded-full absolute left-1/2 bottom-5.5 -translate-1/2 border-1 border-white shadow-sm shadow-black"
       />
-      <h2 className="text-xl font-bold  capitalize">{fullUser.name}</h2>
+      <h2 className="text-xl font-bold  capitalize">
+        {fullUser.firstName + " " + fullUser.lastName}
+      </h2>
       <h3>{fullUser.email}</h3>
     </div>
   );

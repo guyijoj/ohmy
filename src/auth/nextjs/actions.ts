@@ -74,7 +74,8 @@ export async function signUp(unsafedata: z.infer<typeof signUpSchema>) {
     const [user] = await db
       .insert(UserTable)
       .values({
-        name: data.name,
+        firstName: data.firstname,
+        lastName: data.lastname,
         email: data.email,
         password: hashedPassword,
         salt: salt,
@@ -110,7 +111,11 @@ export async function EditProfile(
   try {
     await db
       .update(UserTable)
-      .set({ name: data.name })
+      .set({
+        firstName: data.firstname,
+        lastName: data.lastname,
+        contactNumber: data.contactNumber,
+      })
       .where(eq(UserTable.email, UserEmail));
   } catch {
     return "Unable to create account";

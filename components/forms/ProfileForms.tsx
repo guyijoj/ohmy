@@ -15,8 +15,12 @@ import { EditProfile } from "@/auth/nextjs/actions";
 
 interface ProfileFormsProps {
   UserData: {
-    UserRole: string;
-    UserEmail: string;
+    id: string;
+    email: string;
+    firstName: string;
+    lastName: string;
+    role: "admin" | "user";
+    contactNumber: string | null;
   };
 }
 
@@ -32,7 +36,7 @@ const ProfileForms = ({ UserData }: ProfileFormsProps) => {
   });
 
   const onSubmit: SubmitHandler<FormField> = async (data) => {
-    const result = await EditProfile(UserData.UserEmail, data);
+    const result = await EditProfile(UserData.email, data);
     setError(result);
   };
 
@@ -41,24 +45,26 @@ const ProfileForms = ({ UserData }: ProfileFormsProps) => {
       <label className="flex flex-col gap-1 mb-5.5">
         <span className="text-lg font-medium">First name</span>
         <input
-          {...register("name")}
+          {...register("firstname")}
+          value={UserData.firstName}
           className={`${styles.editProfileForm} max-w-3/5`}
         />
-        {errors.name && (
+        {errors.firstname && (
           <span className="text-sm text-red-500">
-            {errors.name.message as string}
+            {errors.firstname.message as string}
           </span>
         )}
       </label>
       <label className="flex flex-col gap-1 mb-5.5">
         <span className="text-lg font-medium">Last name</span>
         <input
-          {...register("name")}
+          {...register("lastname")}
+          value={UserData.lastName}
           className={`${styles.editProfileForm} max-w-3/5`}
         />
-        {errors.name && (
+        {errors.lastname && (
           <span className="text-sm text-red-500">
-            {errors.name.message as string}
+            {errors.lastname.message as string}
           </span>
         )}
       </label>
@@ -70,24 +76,25 @@ const ProfileForms = ({ UserData }: ProfileFormsProps) => {
         <input
           disabled={true}
           className={`${styles.editProfileForm} max-w-3/5`}
-          placeholder={UserData.UserEmail}
+          placeholder={UserData.email}
         />
       </label>
       <label className="flex flex-col gap-1 mb-5.5">
         <span className="text-lg font-medium">Contact Number</span>
         <input
-          {...register("name")}
+          {...register("contactNumber")}
+          value={UserData.contactNumber || ""}
           className={`${styles.editProfileForm} max-w-3/5`}
         />
-        {errors.name && (
+        {errors.contactNumber && (
           <span className="text-sm text-red-500">
-            {errors.name.message as string}
+            {errors.contactNumber.message as string}
           </span>
         )}
       </label>
       {error && <h3 className="text-red-500 text-xs">{error}</h3>}
       <h1 className="text-xl">
-        Role: <span className="font-bold">{UserData.UserRole}</span>
+        Role: <span className="font-bold">{UserData.role}</span>
       </h1>
       <div className="flex mt-3 mb-4">
         <ToggleRole />
