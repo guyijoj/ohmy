@@ -14,16 +14,17 @@ import DashboardLoading from "./loading";
 import PathnameGate from "./pathnameGate";
 const DashBoardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="min-h-screen pt-35 pr-10 ">
-      <nav>
-        <NavigationBar />
-        <SideNavigationBar />
-      </nav>
-      <div className="flex flex-col ml-90 gap-3.5">
-        <PathnameGate />
-        <main className=" p-5 text-[var(--main-textcolor)] border-1 border-[var(--main-bordercolor)] rounded-xl ">
-          <Suspense fallback={<DashboardLoading />}>{children}</Suspense>
-        </main>
+    <div className=" mt-40 ">
+      <NavigationBar />
+      <SideNavigationBar />
+
+      <div className="flex max-w-[2000px]">
+        <div className="flex flex-col ml-90 mr-10 w-full cont">
+          <PathnameGate />
+          <main className=" p-5 text-[var(--main-textcolor)] border-1 border-[var(--main-bordercolor)] rounded-xl ">
+            <Suspense fallback={<DashboardLoading />}>{children}</Suspense>
+          </main>
+        </div>
       </div>
     </div>
   );

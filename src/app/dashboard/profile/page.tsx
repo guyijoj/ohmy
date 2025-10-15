@@ -12,8 +12,6 @@ const Profile = async () => {
 
   return (
     <div className="relative">
-      <ProfileEditButton />
-
       <h2 className="font-semibold text-2xl heading-line mb-6.5">
         Account Information
       </h2>
@@ -32,9 +30,10 @@ const Profile = async () => {
         </div>
       </div>
 
-      <h1 className="text-2xl">User ID: {fullUser?.id}</h1>
-      <h1 className="text-2xl">Role: {fullUser?.role}</h1>
-      <h1 className="text-2xl">Contact number {fullUser?.contactNumber}</h1>
+      <h1 className="text-xl">User ID: {fullUser?.id}</h1>
+      <h1 className="text-xl">Role: {fullUser?.role}</h1>
+      <h1 className="text-xl">Contact number {fullUser?.contactNumber}</h1>
+      <ProfileEditButton />
     </div>
   );
 };

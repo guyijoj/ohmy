@@ -106,3 +106,7 @@ body {
   background-color: #ffffff;
   color: var(--main-themecolor);
 }
+
+.navi {
+  overflow: visible;
+}

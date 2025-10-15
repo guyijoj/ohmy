@@ -11,7 +11,7 @@ interface NavProps {
 }
 const SideNavigationBar = () => {
   return (
-    <div className="w-75 p-2 fixed bg-[var(--main-themecolor)] min-h-9/11  rounded-r-xl border-r-1 border-t-1 border-white shadow-sm shadow-black flex flex-col justify-between">
+    <div className="w-75 p-2 bottom-0 top-40  fixed  bg-[var(--main-themecolor)] h-auto  rounded-r-xl border-r-1 border-t-1 border-white shadow-sm shadow-black flex flex-col justify-between sideNavBar">
       <div>
         <Suspense fallback={<SideNavigationSkeleton />}>
           <NavUser />

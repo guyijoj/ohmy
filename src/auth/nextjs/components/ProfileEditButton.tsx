@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const ProfileEditButton = () => {
   return (
-    <div className="absolute right-0 font-semibold text-white text-lg">
+    <div className=" absolute top-0 right-0 flex font-semibold text-white text-lg sideNav-sdes profileEditButton">
       <ButtonMainColor>
         {" "}
         <Link href="/dashboard/editProfile" className="text-white">

@@ -8,7 +8,9 @@ const DashboardButton = () => {
   return (
     <NavButton>
       <MdDashboard size={20} />
-      <Link href="/dashboard">Dashboard</Link>
+      <Link href="/dashboard" className="sideNav-sdes">
+        Dashboard
+      </Link>
     </NavButton>
   );
 };

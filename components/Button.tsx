@@ -10,7 +10,7 @@ export const ButtonRed = ({ children, onClick }: ButtonProps) => {
   return (
     <div
       onClick={onClick}
-      className={` text-lg font-bold rounded-lg flex gap-2 items-center p-3 logoutButton ${styles.logoutButton}`}
+      className={` text-lg font-bold rounded-lg sideNav-sdes flex gap-2 items-center p-3 logoutButton ${styles.logoutButton}`}
     >
       {children}
     </div>

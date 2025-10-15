@@ -8,7 +8,9 @@ const ProfileButton = () => {
   return (
     <NavButton>
       <FaUser size={20} />
-      <Link href="/dashboard/profile">Your profile</Link>
+      <Link href="/dashboard/profile" className="sideNav-sdes">
+        Your profile
+      </Link>
     </NavButton>
   );
 };
